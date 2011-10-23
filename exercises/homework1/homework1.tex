@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 
 \newcommand{\norm}[1]{||#1||}
 \newtheorem{claim}{Claim}
@@ -14,19 +15,19 @@
 
 \section*{Exercise 1}
 	\begin{claim}
-		Let $\pmb A \in \mathcal{R}^{n\times n}$ be symmetric. $\pmb A$ is positive definite iff all eigenvalues of $\pmb A$ are positive.
+		Let $\pmb A \in \mathbb{R}^{n\times n}$ be symmetric. $\pmb A$ is positive definite iff all eigenvalues of $\pmb A$ are positive.
 	\end{claim}
 	\begin{proof}
 		\begin{description}
 			\item[$\Rightarrow$] Let $x$ be an eigenvector of $\pmb A$ with $\lambda x = \pmb A x$. $0 < x^{T}\pmb A x = \lambda x^{T}x = \lambda |x|^{2}$. Since $|x|^{2} > 0 \Rightarrow \lambda > 0$.
-			\item[$\Leftarrow$] Since $\pmb A \in \mathcal{R}^{n\times n}$ and $\pmb A = \pmb A^{T}$ there exists an orthonormal basis $(b_{1},\ldots, b_{n})$ consisting of the eigenvectors of $\pmb A$. So for any vector exists $c_{i}$ such that $x=\sum_{i=1}^{n}c_{i}b_{i}$. $x^{T}\pmb A x = \langle x,Ax \rangle = \langle \sum_{i=1}^{n}c_{i}b_{i},\sum_{i=1}^{n}\lambda_{i}c_{i}b_{i}\rangle = \sum_{i,j=1}^{n}\langle c_{j}b_{j}, \lambda_{i}c_{i}b_{i} \rangle = \sum_{i=1}^{n} \langle c_{i}b_{i},\lambda_{i}c_{i}b_{i}\rangle = \sum_{i=1}^{n} \lambda_{i} c_{i}^{2} > 0$.
+			\item[$\Leftarrow$] Since $\pmb A \in \mathbb{R}^{n\times n}$ and $\pmb A = \pmb A^{T}$ there exists an orthonormal basis $(b_{1},\ldots, b_{n})$ consisting of the eigenvectors of $\pmb A$. So for any vector exists $c_{i}$ such that $x=\sum_{i=1}^{n}c_{i}b_{i}$. $x^{T}\pmb A x = \langle x,Ax \rangle = \langle \sum_{i=1}^{n}c_{i}b_{i},\sum_{i=1}^{n}\lambda_{i}c_{i}b_{i}\rangle = \sum_{i,j=1}^{n}\langle c_{j}b_{j}, \lambda_{i}c_{i}b_{i} \rangle = \sum_{i=1}^{n} \langle c_{i}b_{i},\lambda_{i}c_{i}b_{i}\rangle = \sum_{i=1}^{n} \lambda_{i} c_{i}^{2} > 0$.
 			
 			In the next to last step, we have used that the basis vectors are orthogonal. In the last step we have used that all $\lambda_{i}$ are positive and the sum of them multiplied by a positive factor $c_{i}^{2}$.
 		\end{description}
 	\end{proof}
 	
 \section*{Exercise 2}
-	Let $\pmb A \in \mathcal{R}^{n\times n}$ be a symmetric and positive definite matrix.
+	Let $\pmb A \in \mathbb{R}^{n\times n}$ be a symmetric and positive definite matrix.
 	\subsection*{(a)}
 		\begin{claim}
 			$\pmb A$ is invertible and $\pmb A^{-1}$ is SPD
@@ -48,13 +49,13 @@
 		\end{proof}
 		
 \section*{Exercise 3}
-	Let $\pmb Q\in \mathcal{R}^{n\times n}$ be an orthogonal matrix.
+	Let $\pmb Q\in \mathbb{R}^{n\times n}$ be an orthogonal matrix.
 	\subsection*{(a)}
 		\begin{claim}
-			$\norm{\pmb Qx}_{2} = \norm{x}_{2}\  \forall x \in \mathcal{R}^{n}$
+			$\norm{\pmb Qx}_{2} = \norm{x}_{2}\  \forall x \in \mathbb{R}^{n}$
 		\end{claim}
 		\begin{proof}
-			Since $\pmb Q$ is an orthogonal matrix, its row vectors form a basis $(r_{1},\ldots,r_{n})$ of $\mathcal R^{n}$ with $\norm{r_{i}}_{2}=1$. Thus for every $x\in \mathcal{R}^{n}$ exist $c_{i}$ such that $x=\sum_{i}^{n}c_{i}r_{i}$. $\norm{\pmb Q x}_{2}=\norm{\sum_{i}^{n} c_{i} \pmb Q r_{i}}_{2}= \norm{\sum_{i}^{n} c_{i}e_{i}}_{2} = \sqrt{\sum_{i}^{n}c_{i}^{2}} = \sqrt{\langle \sum_{i}^{n} c_{i}r_{i},\sum_{i}^{n}c_{i}r_{i}\rangle} = \norm{x}_{2}$
+			Since $\pmb Q$ is an orthogonal matrix, its row vectors form a basis $(r_{1},\ldots,r_{n})$ of $\mathbb R^{n}$ with $\norm{r_{i}}_{2}=1$. Thus for every $x\in \mathbb{R}^{n}$ exist $c_{i}$ such that $x=\sum_{i}^{n}c_{i}r_{i}$. $\norm{\pmb Q x}_{2}=\norm{\sum_{i}^{n} c_{i} \pmb Q r_{i}}_{2}= \norm{\sum_{i}^{n} c_{i}e_{i}}_{2} = \sqrt{\sum_{i}^{n}c_{i}^{2}} = \sqrt{\langle \sum_{i}^{n} c_{i}r_{i},\sum_{i}^{n}c_{i}r_{i}\rangle} = \norm{x}_{2}$
 		\end{proof}
 	\subsection*{(b)}
 		\begin{claim}
@@ -68,16 +69,16 @@
 			$\kappa_{2}(\pmb Q) = 1$
 		\end{claim}
 		\begin{proof}
-			$\norm{\pmb Q}_{2} := \sup\{\norm{\pmb Qy}_{2}\ :\ y\in \mathcal{R}^{n},\norm{y}_{2}=1\}$. According to (a): $\norm{\pmb Q}_{2}= \sup\{\norm{y}_{2}=1\}=1$. Since $\pmb Q^{-1}=\pmb Q^{T}$ and $\pmb Q^{T}$ is an orthogonal matrix, it follows that $\norm{\pmb Q^{-1}}_{2}=1$ and thus $\kappa_{2}(\pmb Q)=1$.
+			$\norm{\pmb Q}_{2} := \sup\{\norm{\pmb Qy}_{2}\ :\ y\in \mathbb{R}^{n},\norm{y}_{2}=1\}$. According to (a): $\norm{\pmb Q}_{2}= \sup\{\norm{y}_{2}=1\}=1$. Since $\pmb Q^{-1}=\pmb Q^{T}$ and $\pmb Q^{T}$ is an orthogonal matrix, it follows that $\norm{\pmb Q^{-1}}_{2}=1$ and thus $\kappa_{2}(\pmb Q)=1$.
 		\end{proof}
 	\subsection*{(d)}
 		\begin{claim}
-			Let $\pmb A \in \mathcal{R}^{n\times n}$. $\norm{\pmb A}_{2} = \norm{\pmb Q\pmb A}_{2} = \norm{\pmb A\pmb Q}_{2}$.
+			Let $\pmb A \in \mathbb{R}^{n\times n}$. $\norm{\pmb A}_{2} = \norm{\pmb Q\pmb A}_{2} = \norm{\pmb A\pmb Q}_{2}$.
 		\end{claim}
 		\begin{proof}
-			$\norm{\pmb A}_{2} = \sup\{\norm{\pmb Ay}_{2}:y\in \mathcal{R}^{n},\norm{y}_{2}=1\} = \sup\{\norm{x}_{2}: x=\pmb Ay, y\in\mathcal{R}^{n},\norm{y}_{2}=1\}= \sup\{\norm{\pmb Qx}_{2}: x=\pmb Ay, y\in\mathcal{R}^{n},\norm{y}_{2}=1\} = \sup\{\norm{\pmb Q\pmb A y}_{2}: y\in\mathcal{R}^{n},\norm{y}_{2}=1\} = \norm{\pmb Q\pmb A}_{2}$
+			$\norm{\pmb A}_{2} = \sup\{\norm{\pmb Ay}_{2}:y\in \mathbb{R}^{n},\norm{y}_{2}=1\} = \sup\{\norm{x}_{2}: x=\pmb Ay, y\in\mathbb{R}^{n},\norm{y}_{2}=1\}= \sup\{\norm{\pmb Qx}_{2}: x=\pmb Ay, y\in\mathbb{R}^{n},\norm{y}_{2}=1\} = \sup\{\norm{\pmb Q\pmb A y}_{2}: y\in\mathbb{R}^{n},\norm{y}_{2}=1\} = \norm{\pmb Q\pmb A}_{2}$
 			
-			$\norm{\pmb A}_{2} = \sup\{\norm{\pmb Ay}_{2}:y\in \mathcal{R}^{n}, \norm{y}_{2}=1\} = \sup\{\norm{\pmb A\pmb Q x}_{2}: \pmb Qx\in \mathcal{R}^{n}, \norm{\pmb Qx}_{2}=1\} = \sup\{\norm{\pmb A\pmb Q x}_{2}: x\in \mathcal{R}^{n}, \norm{\pmb Q x}_{2}=1\}=\sup\{\norm{\pmb A \pmb Q x}_{2}: x\in \mathcal{R}^{n},\norm{x}_{2}=1\}=\norm{\pmb A \pmb Q}_{2}$.
+			$\norm{\pmb A}_{2} = \sup\{\norm{\pmb Ay}_{2}:y\in \mathbb{R}^{n}, \norm{y}_{2}=1\} = \sup\{\norm{\pmb A\pmb Q x}_{2}: \pmb Qx\in \mathbb{R}^{n}, \norm{\pmb Qx}_{2}=1\} = \sup\{\norm{\pmb A\pmb Q x}_{2}: x\in \mathbb{R}^{n}, \norm{\pmb Q x}_{2}=1\}=\sup\{\norm{\pmb A \pmb Q x}_{2}: x\in \mathbb{R}^{n},\norm{x}_{2}=1\}=\norm{\pmb A \pmb Q}_{2}$.
 		\end{proof}	
 
 \end{document}
