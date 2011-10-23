@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.2)  23 OCT 2011 17:02
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.2)  23 OCT 2011 22:58
 entering extended mode
  %&-line parsing enabled.
 **homework1.tex
@@ -81,44 +81,88 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \mathdisplay@stack=\toks18
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
-) (./homework1.aux)
+)
+(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks24
+)
+\c@claim=\count99
+ (./homework1.aux)
 \openout1 = `homework1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+Overfull \hbox (21.84534pt too wide) in paragraph at lines 22--23
+[][] \OML/cmm/m/it/10 c[]b[]$\OT1/cmr/m/n/10 . $\OML/cmm/m/it/10 x[][]x \OT1/cm
+r/m/n/10 = \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 x; Ax\OMS/cmsy/m/n/10 i \OT1/cmr/
+m/n/10 = \OMS/cmsy/m/n/10 h[][] \OML/cmm/m/it/10 c[]b[]; [][] ^^U[]c[]b[]\OMS/c
+msy/m/n/10 i \OT1/cmr/m/n/10 = [][]\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 c[]b[]; ^
+^U[]c[]b[]\OMS/cmsy/m/n/10 i \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (26.85722pt too wide) in paragraph at lines 39--40
+[]\OT1/cmr/m/n/10 The pos-i-tive def-i-nite-ness fol-lows from: $0 \OML/cmm/m/i
+t/10 < x[][]x \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 x[][][][][]x \OT1/cmr/m/n/10 =
+ ([]\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[][][]([]\OML/cmm/m/it/10 x\OT1/cmr/m/n/
+10 )$.
+ []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./homework1.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (5.63608pt too wide) in paragraph at lines 80--81
+[]$\OMS/cmsy/m/n/10 jj[]jj[] \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 fjj[]\OML/cmm
+/m/it/10 y\OMS/cmsy/m/n/10 jj[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 y \OMS/cmsy/
+m/n/10 2 R[]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 y\OMS/cmsy/m
+/n/10 jj[] \OT1/cmr/m/n/10 = 1\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = []\OMS/cmsy/
+m/n/10 fjj[][]\OML/cmm/m/it/10 x\OMS/cmsy/m/n/10 jj[] \OT1/cmr/m/n/10 : []\OML/
+cmm/m/it/10 x \OMS/cmsy/m/n/10 2 R[]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 jj[]\OM
+L/cmm/m/it/10 x\OMS/cmsy/m/n/10 jj[] \OT1/cmr/m/n/10 =
+ []
+
+[2] (./homework1.aux) ) 
 Here is how much of TeX's memory you used:
- 830 strings out of 495021
- 9130 string characters out of 1181036
- 57328 words of memory out of 3000000
- 4079 multiletter control sequences out of 15000+50000
- 8408 words of font info for 31 fonts, out of 3000000 for 9000
+ 911 strings out of 495021
+ 10059 string characters out of 1181036
+ 71500 words of memory out of 3000000
+ 4154 multiletter control sequences out of 15000+50000
+ 9369 words of font info for 34 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,6n,20p,205b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on homework1.pdf (1 page, 78255 bytes).
+ 27i,6n,20p,592b,191s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on homework1.pdf (2 pages, 141034 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

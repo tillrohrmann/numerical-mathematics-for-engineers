@@ -2,6 +2,9 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 
+\newcommand{\norm}[1]{||#1||}
+\newtheorem{claim}{Claim}
+
 \title{Numerical Mathematics for Engineers II\\Homework 1}
 \author{Ana Kosareva, Sophia Kohle, Till Rohrmann}
 \date{\today}
@@ -10,7 +13,71 @@
 \maketitle
 
 \section*{Exercise 1}
-Let $\pmb A \in \mathcal{R}^{n\times n}$ be symmetric. 
-
+	\begin{claim}
+		Let $\pmb A \in \mathcal{R}^{n\times n}$ be symmetric. $\pmb A$ is positive definite iff all eigenvalues of $\pmb A$ are positive.
+	\end{claim}
+	\begin{proof}
+		\begin{description}
+			\item[$\Rightarrow$] Let $x$ be an eigenvector of $\pmb A$ with $\lambda x = \pmb A x$. $0 < x^{T}\pmb A x = \lambda x^{T}x = \lambda |x|^{2}$. Since $|x|^{2} > 0 \Rightarrow \lambda > 0$.
+			\item[$\Leftarrow$] Since $\pmb A \in \mathcal{R}^{n\times n}$ and $\pmb A = \pmb A^{T}$ there exists an orthonormal basis $(b_{1},\ldots, b_{n})$ consisting of the eigenvectors of $\pmb A$. So for any vector exists $c_{i}$ such that $x=\sum_{i=1}^{n}c_{i}b_{i}$. $x^{T}\pmb A x = \langle x,Ax \rangle = \langle \sum_{i=1}^{n}c_{i}b_{i},\sum_{i=1}^{n}\lambda_{i}c_{i}b_{i}\rangle = \sum_{i,j=1}^{n}\langle c_{j}b_{j}, \lambda_{i}c_{i}b_{i} \rangle = \sum_{i=1}^{n} \langle c_{i}b_{i},\lambda_{i}c_{i}b_{i}\rangle = \sum_{i=1}^{n} \lambda_{i} c_{i}^{2} > 0$.
+			
+			In the next to last step, we have used that the basis vectors are orthogonal. In the last step we have used that all $\lambda_{i}$ are positive and the sum of them multiplied by a positive factor $c_{i}^{2}$.
+		\end{description}
+	\end{proof}
+	
+\section*{Exercise 2}
+	Let $\pmb A \in \mathcal{R}^{n\times n}$ be a symmetric and positive definite matrix.
+	\subsection*{(a)}
+		\begin{claim}
+			$\pmb A$ is invertible and $\pmb A^{-1}$ is SPD
+		\end{claim}
+		\begin{proof}
+			Let's assume that $\pmb A$ is not invertible. That means $\exists x$ such that $\pmb A x=0$. This further implies $x^{T}Ax = x^{T}0 = 0$, which contradicts the fact that $\pmb A$ is positive definite.
+			
+			Then it holds $\pmb A\cdot \pmb A^{-1} = \pmb I$ and $\pmb A^{-1}\pmb A =\pmb I$. With $(\pmb A^{-1}\pmb A)^{T} = \pmb A^{T} (\pmb A^{-1})^{T} = \pmb A (\pmb A^{-1})^{T} = \pmb I$. And thus it holds $\pmb A^{-1}=(A^{-1})^{T}$.
+			
+			The positive definiteness follows from: $0 < x^{T}\pmb Ax = x^{T}\pmb A\pmb A^{-1}\pmb Ax = (\pmb Ax)^{T}\pmb A^{-1}(\pmb Ax)$. Since $\pmb A$ is regular $\forall \tilde{x}: \exists x: \tilde{x} = \pmb A x$ and thus with $\tilde{x} = \pmb A x$ it holds that $\tilde{x}^{T} \pmb A^{-1} \tilde{x} >0$.
+		\end{proof}
+	\subsection*{(b)}
+		\begin{claim}
+			The diagonal elements $\pmb a_{ii}$ of $\pmb A$ are positive.
+		\end{claim}
+		
+		\begin{proof}
+			Choose $x=e_{i}$ with $i \in [1,n]$. $x^{T}\pmb A x = x^{T}\pmb a_{i}$ with $\pmb a_{i}$ being the $i$th column. Then $x^{T}\pmb a_{i}=\pmb a_{ii} > 0$ because $\pmb A$ is positive definite.
+		\end{proof}
+		
+\section*{Exercise 3}
+	Let $\pmb Q\in \mathcal{R}^{n\times n}$ be an orthogonal matrix.
+	\subsection*{(a)}
+		\begin{claim}
+			$\norm{\pmb Qx}_{2} = \norm{x}_{2}\  \forall x \in \mathcal{R}^{n}$
+		\end{claim}
+		\begin{proof}
+			Since $\pmb Q$ is an orthogonal matrix, its row vectors form a basis $(r_{1},\ldots,r_{n})$ of $\mathcal R^{n}$ with $\norm{r_{i}}_{2}=1$. Thus for every $x\in \mathcal{R}^{n}$ exist $c_{i}$ such that $x=\sum_{i}^{n}c_{i}r_{i}$. $\norm{\pmb Q x}_{2}=\norm{\sum_{i}^{n} c_{i} \pmb Q r_{i}}_{2}= \norm{\sum_{i}^{n} c_{i}e_{i}}_{2} = \sqrt{\sum_{i}^{n}c_{i}^{2}} = \sqrt{\langle \sum_{i}^{n} c_{i}r_{i},\sum_{i}^{n}c_{i}r_{i}\rangle} = \norm{x}_{2}$
+		\end{proof}
+	\subsection*{(b)}
+		\begin{claim}
+			$\forall \lambda$ of $\pmb Q$: $|\lambda|=1$.
+		\end{claim}
+		\begin{proof}
+			Let $x$ be an eigenvector of $\pmb Q$. $\norm{\pmb Qx}_{2} = \norm{\lambda x}_{2} = |\lambda|\cdot\norm{x}_{2}= \norm{x}_{2}$. Thus $|\lambda|=1$.		
+		\end{proof}
+	\subsection*{(c)}
+		\begin{claim}
+			$\kappa_{2}(\pmb Q) = 1$
+		\end{claim}
+		\begin{proof}
+			$\norm{\pmb Q}_{2} := \sup\{\norm{\pmb Qy}_{2}\ :\ y\in \mathcal{R}^{n},\norm{y}_{2}=1\}$. According to (a): $\norm{\pmb Q}_{2}= \sup\{\norm{y}_{2}=1\}=1$. Since $\pmb Q^{-1}=\pmb Q^{T}$ and $\pmb Q^{T}$ is an orthogonal matrix, it follows that $\norm{\pmb Q^{-1}}_{2}=1$ and thus $\kappa_{2}(\pmb Q)=1$.
+		\end{proof}
+	\subsection*{(d)}
+		\begin{claim}
+			Let $\pmb A \in \mathcal{R}^{n\times n}$. $\norm{\pmb A}_{2} = \norm{\pmb Q\pmb A}_{2} = \norm{\pmb A\pmb Q}_{2}$.
+		\end{claim}
+		\begin{proof}
+			$\norm{\pmb A}_{2} = \sup\{\norm{\pmb Ay}_{2}:y\in \mathcal{R}^{n},\norm{y}_{2}=1\} = \sup\{\norm{x}_{2}: x=\pmb Ay, y\in\mathcal{R}^{n},\norm{y}_{2}=1\}= \sup\{\norm{\pmb Qx}_{2}: x=\pmb Ay, y\in\mathcal{R}^{n},\norm{y}_{2}=1\} = \sup\{\norm{\pmb Q\pmb A y}_{2}: y\in\mathcal{R}^{n},\norm{y}_{2}=1\} = \norm{\pmb Q\pmb A}_{2}$
+			
+			$\norm{\pmb A}_{2} = \sup\{\norm{\pmb Ay}_{2}:y\in \mathcal{R}^{n}, \norm{y}_{2}=1\} = \sup\{\norm{\pmb A\pmb Q x}_{2}: \pmb Qx\in \mathcal{R}^{n}, \norm{\pmb Qx}_{2}=1\} = \sup\{\norm{\pmb A\pmb Q x}_{2}: x\in \mathcal{R}^{n}, \norm{\pmb Q x}_{2}=1\}=\sup\{\norm{\pmb A \pmb Q x}_{2}: x\in \mathcal{R}^{n},\norm{x}_{2}=1\}=\norm{\pmb A \pmb Q}_{2}$.
+		\end{proof}	
 
 \end{document}
