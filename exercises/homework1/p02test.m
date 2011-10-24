@@ -12,6 +12,13 @@ function [Fgs, Fmgs] = p02test()
 		Fgs(j) = F(Ugs);
 		Fmgs(j)=F(Umgs);
 	end
+	clf;
+	x=1:1:10;
+	x=x*50;
+	p = semilogy(x,Fgs,'-r',x,Fmgs,'-g');
+	ylabel("||I - U^{T}U||_{Fro}");
+	xlabel("Number of orthogonalized vectors");
+	hleg1 = legend('Fgs','Fmgs');
 endfunction
 
 function[n] = F(U)
