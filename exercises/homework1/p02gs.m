@@ -1,10 +1,9 @@
+function[U] = p02gs(V)
 % Programming Exercise Numerical Mathematics for Engineers II
 % Homework 1
 % Authors: Sophie Kohle (MatrNr.: ), Ana Kosareva (MatrNr.: ), Till Rohrmann (MatrNr.: 343756)
 % 
 % Using OCTAVE
-
-function[U] = p02gs(V)
 	for i=1:1:columns(V)
 		utemp = 0;
 		for j=1:1:i-1
