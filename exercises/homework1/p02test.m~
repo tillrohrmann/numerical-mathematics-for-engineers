@@ -1,7 +1,6 @@
 function [Fgs, Fmgs] = p02test()
 % Programming Exercise Numerical Mathematics for Engineers II
 % Homework 1
-% Group: nm2-103
 % Authors: Sophia Kohle (MatrNr.: 341322), Ana Kosareva (MatrNr.: 321785), Till Rohrmann (MatrNr.: 343756)
 % 
 % Using OCTAVE

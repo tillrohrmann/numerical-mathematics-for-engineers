@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.2)  24 OCT 2011 15:30
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.25)  25 OCT 2011 22:53
 entering extended mode
  %&-line parsing enabled.
 **homework1.tex
 (./homework1.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, ngerman, german, german-x-2009-06-19, ngerman-x-2009-06-19, loaded.
-
+yphenation, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size10.clo
@@ -162,10 +161,10 @@ n/10 : []\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]\OML/cmm/m/it/1
 
 [2] (./homework1.aux) ) 
 Here is how much of TeX's memory you used:
- 1201 strings out of 495021
- 13192 string characters out of 1181036
- 73968 words of memory out of 3000000
- 4425 multiletter control sequences out of 15000+50000
+ 1201 strings out of 495061
+ 13192 string characters out of 1182620
+ 74901 words of memory out of 3000000
+ 4410 multiletter control sequences out of 15000+50000
  11849 words of font info for 46 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  27i,6n,24p,591b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -181,7 +180,7 @@ sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/
 fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on homework1.pdf (2 pages, 145380 bytes).
+Output written on homework1.pdf (2 pages, 146038 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
