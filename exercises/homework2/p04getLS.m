@@ -9,6 +9,8 @@ function [ Ah fh ] = p04getLS( p )
 % -u'' - 3u' + u = -2 + 10x^2 - x^3 \Omega = (0,1)
 % u(0) = u(1) =0
 % h = (2^p + 1)^-1
+%
+% MATLAB
 
 alpha=0;
 beta=0;

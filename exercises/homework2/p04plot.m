@@ -4,6 +4,7 @@ function [ errors ] = p04plot( )
 % Group: nm2-103
 % Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
 %
+% MATLAB
 
 u = @(x) x.^2-x.^3;
 
@@ -18,3 +19,6 @@ end
 
 p = 1:20;
 semilogy(p,errors);
+title('Deviation of discrete solution from analytic solution');
+xlabel('Number of discretization points in log(n)/log(2)');
+ylabel('norm(u(xh)-uh,Inf)');
