@@ -7,13 +7,12 @@ function [ err ] = p06plot( epsi, xh, uh )
 %
 %
 
-x = 0:0.0001:1;
-u = x - (exp(-(1-x)/epsi) - exp(-1/epsi))/(1-exp(-1/epsi));
-rhu = xh - (exp(-(1-xh)/epsi) - exp(-1/epsi))/(1-exp(-1/epsi));
+u = xh - (exp(-(1-xh)/epsi) - exp(-1/epsi))/(1-exp(-1/epsi));
 
-err = norm(rhu(:)-uh(:),'inf');
+err = norm(u(:)-uh(:),'inf');
 
-plot(xh,uh,'-r',x,u,'-g',xh,rhu,'-b');
+plot(xh,uh,'-r',xh,u,'-b');
+legend('Numerical','Analytic','Location','South');
 
 end
 
