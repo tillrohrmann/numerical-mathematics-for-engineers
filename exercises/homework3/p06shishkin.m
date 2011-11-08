@@ -5,7 +5,7 @@ function [ xh ] = p06shishkin( n,sigma )
 % Group: nm2-103
 % Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
 %
-%
+% Matlab
 
 H = (1-sigma)/n;
 h = sigma/n;

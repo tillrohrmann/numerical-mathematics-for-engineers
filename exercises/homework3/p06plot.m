@@ -5,7 +5,7 @@ function [ err ] = p06plot( epsi, xh, uh )
 % Group: nm2-103
 % Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
 %
-%
+% Matlab
 
 u = xh - (exp(-(1-xh)/epsi) - exp(-1/epsi))/(1-exp(-1/epsi));
 

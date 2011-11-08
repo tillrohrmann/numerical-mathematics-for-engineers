@@ -5,7 +5,7 @@ function [ Lh, fh ] = p05getLS( a,b,c, alpha,beta,f,xh,d)
 % Group: nm2-103
 % Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
 %
-%
+% Matlab
 
 n = length(xh)-2;
 h = xh(2:length(xh))-xh(1:length(xh)-1);

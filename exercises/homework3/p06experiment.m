@@ -5,7 +5,7 @@ function p06experiment( )
 % Group: nm2-103
 % Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
 %
-%
+% Matlab
 
 epsi = 0.001;
 n = [50,200,300,500];

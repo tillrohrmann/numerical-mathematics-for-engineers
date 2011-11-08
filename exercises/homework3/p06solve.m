@@ -5,7 +5,7 @@ function [ uh ] = p06solve( epsi,xh,d )
 % Group: nm2-103
 % Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
 %
-%
+% Matlab
 
 a = epsi;
 b = 1;
