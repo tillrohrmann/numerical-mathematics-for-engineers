@@ -21,7 +21,7 @@ ue=@(x1,x2) 1/sinh(sigma)*exp(v1*x1./2)*sinh(sigma*(1-x1))*sin(pi*x2.);
 subplot(1,2,1)
 surf(X,uh)
 subplot(1,2,2)
-surf(X,X,ue(X,X))
+surf(X,ue([))
 
 
 
