@@ -10,16 +10,14 @@ function p07err(r, v1 )
 [e2, einf, eoc2, eocinf]=p07getErr(r,v1);
 
 subplot(1,2,1);
-semilogy(e2,einf);
+semilogy(1:r,e2,1:r,einf);
 title('Fehler in der 2- Norm und der inf-Norm')
+legend('E2','EINF');
+xlabel('Gridpoints in log(n)/log(2)');
 subplot(1,2,2);
-plot([1:r],eoc2,[1:r],eocinf);
-title('EOC')
-
-
-
-
-
+plot(1:r,eoc2,1:r,eocinf);
+title('EOC');
+legend('EOC2','EOCINF');
+xlabel('Gridpoints in log(n)/log(2)');
 
 end
-

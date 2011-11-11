@@ -5,6 +5,7 @@ function [ Lh, fh ] = p07getLS( n,v,f,g )
 % Group: nm2-103
 % Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
 %
+% Matlab
 
 h = 1/(n+1);
 
@@ -14,13 +15,13 @@ Cn = 1/(2*h)*gallery('tridiag',n,-1,0,1);
 
 Lh = (kron(I,Tn)+kron(Tn,I)+v(1)*kron(I,Cn)+v(2)*kron(Cn,I));
 
-[X Y] = meshgrid(0:h:1);
+[X Y] = meshgrid(h:h:1-h);
 
 fEvaluated = f(X,Y);
 
 paraZeros = sparse(n,1);
 paraOnes = ones(n,1);
-xh = 0:h:1;
+xh = (h:h:1-h)';
 
 gWest = g(paraZeros,xh);
 gEast = g(paraOnes,xh);
@@ -36,10 +37,10 @@ fh = fEvaluated + sparse(helpIndexWest,paraOnes,1/h^2*gWest,n*n,1,n) + ...
 sparse(helpIndexEast,paraOnes,1/h^2*gEast,n*n,1,n) + ...
 sparse(helpIndexSouth,paraOnes,1/h^2*gSouth,n*n,1,n) + ...
 sparse(helpIndexNorth,paraOnes,1/h^2*gNorth,n*n,1,n) + ...
-sparse(helpIndexWest,paraOnes,1/(2*h)*gWest,n*n,1,n) + ...
-sparse(helpIndexEast,paraOnes,-1/(2*h)*gEast,n*n,1,n) + ...
-sparse(helpIndexSouth,paraOnes,1/(2*h)*gSouth,n*n,1,n) + ...
-sparse(helpIndexNorth,paraOnes,-1/(2*h)*gNorth,n*n,1,n);
+sparse(helpIndexWest,paraOnes,1/(2*h)*v(1)*gWest,n*n,1,n) + ...
+sparse(helpIndexEast,paraOnes,-1/(2*h)*v(1)*gEast,n*n,1,n) + ...
+sparse(helpIndexSouth,paraOnes,1/(2*h)*v(2)*gSouth,n*n,1,n) + ...
+sparse(helpIndexNorth,paraOnes,-1/(2*h)*v(2)*gNorth,n*n,1,n);
 
 end
 
