@@ -1,5 +1,11 @@
 function [lam,err,eoc]=p09test()
-
+% Numerical mathematics for engineers II
+% Homework 5
+% Programming exercise 9
+% Group: nm2-103
+% Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
+% 
+% Matlab
 
 u =@(x,y) cos(2*pi*x).*exp(y.^3);
     
