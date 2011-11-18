@@ -4,9 +4,11 @@ function [lam,err,eoc]=p09test()
 u =@(x,y) cos(2*pi*x).*exp(y.^3);
     
 f= @(x,y) cos(2*pi*x).*exp(y.^3)*(4*pi^2.-6*y-9*y.^4);
-g= @(x,y) (x==1).*3*cos(2*pi*x).*exp(1);
+g= @(x,y) (x==1)*3.*cos(2*pi*x).*exp(1);
 
 lam=zeros(8,1);
+eoc = zeros(8,1);
+err =zeros(8,1);
 
 for p=1:8
     
@@ -21,17 +23,21 @@ for p=1:8
     LhExtended = [Lh e; [e' 0]];
     fhExtended = [fh ; 0];
     
-    [uh lam(p)]' = LhExtended \ fhExtended;
+    uhEx = LhExtended \ fhExtended;
+    
+    lam(p) = uhEx(end);
+    uh = uhEx(1:end-1,1);
     
     xh = h:h:1-h;
     [X,Y] = meshgrid(xh);
     
     uex = u(X,Y);
+    uex = reshape(uex', numel(uex),1);
     
-    error = uh - uhe;
+    error = uh - uex;
     err(p) = norm(error,'inf');
     if(p > 1)
-       eoc(p) = log(e2(p)/e2(p-1))/log(h/prevH);
+       eoc(p) = log(err(p)/err(p-1))/log(h/prevH);
     end
     prevH=h;
 end
