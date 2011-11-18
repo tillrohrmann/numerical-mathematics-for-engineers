@@ -9,8 +9,8 @@ function [lam,err,eoc]=p09test()
 
 u =@(x,y) cos(2*pi*x).*exp(y.^3);
     
-f= @(x,y) cos(2*pi*x).*exp(y.^3)*(4*pi^2.-6*y-9*y.^4);
-g= @(x,y) (x==1)*3.*cos(2*pi*x).*exp(1);
+f= @(x,y) cos(2*pi*x).*exp(y.^3).*(4*pi^2-6*y-9*y.^4);
+g= @(x,y) (y==1)*3.*cos(2*pi*x).*exp(1);
 
 lam=zeros(8,1);
 eoc = zeros(8,1);
