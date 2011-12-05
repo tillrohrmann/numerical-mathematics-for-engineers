@@ -12,19 +12,26 @@ fh = zeros(numel(G)-2,1);
 for i = 1:numel(G)-2
     xstart = G(i);
     xend = G(i+2);
+    xmiddle = G(i+1);
     
-    gamma = (xend-xstart)/(m+1);
+    hstart = xmiddle-xstart;
+    hend = xend-xmiddle;
     
-    func = @(x) f(x).*p10evalBasis(x,i,G);
+    lf = @(x) f(x).*(x-xstart)/hstart;
+    rf = @(x) f(x).*(xend-x)/hend;
     
-    fsum = 1/2*(func(xstart)+func(xend));
+    lgamma = (xmiddle-xstart)/(m+1);
+    rgamma = (xend-xmiddle)/(m+1);
+    
+    lfsum = 1/2*(lf(xstart) + lf(xmiddle));
+    rfsum = 1/2*(rf(xmiddle)+rf(xend));
     
     for j = 1:m
-        fsum = fsum + func(xstart+j*gamma);
+       lfsum = lfsum + lf(xstart+j*lgamma);
+       rfsum = rfsum + rf(xmiddle+j*rgamma);
     end
     
-    fh(i) = gamma*fsum;
-    fh(i) = quad(func,xstart,xend);
+    fh(i) = lgamma*lfsum + rgamma*rfsum;
 end
 
 end

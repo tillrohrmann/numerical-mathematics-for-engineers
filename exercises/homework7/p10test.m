@@ -11,7 +11,7 @@ c=1;
 f = @(x) exp(x).*4.*x;
 u = @(x) exp(x).*(x-x.^2);
 
-maxP=10;
+maxP=14;
 
 err = zeros(maxP,1);
 eoc = zeros(maxP,1);
@@ -41,9 +41,6 @@ for p = 1:maxP
     
     hprev= h;
     h2prev = h2;
-    
-    figure();
-    plot(xh,uh,xh,u(xh));
     
 end
 end
