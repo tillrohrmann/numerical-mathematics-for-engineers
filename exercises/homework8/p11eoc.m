@@ -21,7 +21,7 @@ eoc = zeros(numel(r),1);
 
 dim = 3;
 hprev = 0;
-filename = 'hw8';
+%filename = 'hw8';
 for i=1:numel(r)
     h = 1/2^r(i);
     [p,e,t] = p11mshUnit(dim,2^r(i)-1);
@@ -29,7 +29,7 @@ for i=1:numel(r)
     alpha = (S+M+D)\fh;
     err(i) = norm(u(p)'-alpha,'inf');
     
-    p11vtkWrite(strcat(filename,'_',int2str(i),'.vtu'),p,e,t,alpha);
+    %p11vtkWrite(strcat(filename,'_',int2str(i),'.vtu'),p,e,t,alpha);
     
     if(i > 1)
         eoc(i) = log(err(i)/err(i-1))/log(h/hprev);
