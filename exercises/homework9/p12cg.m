@@ -20,7 +20,7 @@ for j=1:maxit
    Ap=A*p;
    pAp=p'*Ap; %p'*A*p A-norm
    gamma=(r'*r)/pAp; %Schrittweite
-   xj=xj+gamma*p; %Update der Lösung
+   xj=xj+gamma*p; %Update der LÃ¶sung
    ralt=r;%altes Residuum merken
    r=r-gamma*Ap;%neues Residuum
    if norm(r,2)/norm(r0,2) <= tol 
@@ -32,7 +32,7 @@ for j=1:maxit
    r2u(j+1)=norm(r,2)/norm(r0,2); %relative Euklideisch Norm
    r2(j+1)=norm(b-A*xj,2)/norm(r0,2); %relative Euklidische norm
    e2(j+1)=norm(x-xj,2)/norm(x-x0,2); %relativer Fehler Euklidische Norm
-   eA(j+1)=((x-xj)'*A*(x-xj))/((x-x0)'*A*(x-x0));%relativer Fehler A-norm
+   eA(j+1)=sqrt(((x-xj)'*A*(x-xj))/((x-x0)'*A*(x-x0)));%relativer Fehler A-norm
     
 end    
 end

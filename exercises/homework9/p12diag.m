@@ -7,12 +7,12 @@ function p12diag()
 % 
 % Matlab
 
-A=diag([1:48]);
+A=diag(1:48);
 x0=zeros(48,1);
 x=ones(48,1);
 b=A*x;
 maxit=200;
-tol=10*10^(-12);
+tol=10^(-12);
 
 [ xj,r2u,r2,e2,eA ] = p12cg( A,b,x0,maxit,tol,x );
 
