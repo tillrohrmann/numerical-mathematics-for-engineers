@@ -1,0 +1,37 @@
+function [ xj,r2u ] = p1pcg( A,b,x0,maxit,tol,L )
+%% Numerical mathematics for engineers II
+% Homework 5
+% Programming exercise 13
+% Group: nm2-103
+% Members: Ana Kosareva, Sophia Kohle, Till Rohrmann
+% 
+% Matlab
+
+r0=b-A*x0;
+r=r0;
+% z=(LL')\r0;
+% p=z;
+% xj=x0;
+% r2u(1)=1; %relative Euklidisch Norm
+for j=1:maxit
+   
+   Ap=A*p;
+   pAp=p'*Ap; %p'*A*p A-norm
+   gamma=(r'*z)/pAp; %Schrittweite
+   xj=xj+gamma*p; %Update der Lösung
+   ralt=r;%altes Residuum merken
+   r=r-gamma*Ap;%neues Residuum
+   if norm(r,2)/norm(r0,2) <= tol 
+       return
+   end
+   zalt=z; 
+   y=L\r;
+   z=L'\y;
+   beta=(r'*z)/(ralt'*ralt); % konjugierte Abstiegsrichtung
+   p=r+beta*p;%neue Abstiegsrichtung
+   
+   r2u(j+1)=norm(r,2)/norm(r0,2); %relative Euklideisch Norm
+  
+end    
+end
+
