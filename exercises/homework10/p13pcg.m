@@ -1,5 +1,5 @@
-function [ xj,r2u ] = p13pcg( A,b,x0,maxit,tol,L )
-%% Numerical mathematics for engineers II
+function [ xj, r2u ] = p13pcg( A, b, x0, maxit, tol, L )
+% Numerical mathematics for engineers II
 % Homework 10
 % Programming exercise 13
 % Group: nm2-103
@@ -7,32 +7,39 @@ function [ xj,r2u ] = p13pcg( A,b,x0,maxit,tol,L )
 % 
 % Matlab
 
-r0=b-A*x0;
-r=r0;
-y=L\r;
-z=L'\y;
-p=z;
-xj=x0;
-r2u(1)=1; %relative Euklidisch Norm
-for j=1:maxit
-   
-   Ap=A*p;
-   pAp=p'*Ap; %p'*A*p A-norm
-   gamma=(r'*z)/pAp; %Schrittweite
-   xj=xj+gamma*p; %Update der Lösung
-   ralt=r;%altes Residuum merken
-   r=r-gamma*Ap;%neues Residuum
-   if norm(r,2)/norm(r0,2) <= tol 
-       return
-   end
-   zalt=z; %altes z merken
-   y=L\r;
-   z=L'\y;
-   beta=(r'*z)/(ralt'*zalt); % konjugierte Abstiegsrichtung
-   p=z+beta*p;%neue Abstiegsrichtung
-   
-   r2u(j+1)=norm(r,2)/norm(r0,2); %relative Euklidisch Norm
-  
-end    
+r0 = b- A*x0;
+ztemp = L\r0;
+z0 = L'\ztemp;
+p = z0;
+
+rold = r0;
+zold = z0;
+r2utemp = zeros(maxit,1);
+xj = x0;
+nr0 = sqrt(r0'*r0);
+
+for j = 0:maxit
+    Ap = A*p;
+    gamma = (rold'*zold)/(p'*Ap);
+    xj = xj + gamma*p;
+    rnew = rold - gamma*Ap;
+    nrnew = sqrt(rnew'*rnew);
+    r2utemp(j+1) = nrnew/nr0;
+    if nrnew/nr0 < tol
+        r2u = r2utemp(1:j+1,1);
+        return;
+    end
+    ztemp = L\rnew;
+    znew = L'\ztemp;
+    beta = rnew'*znew/(rold'*zold);
+    p = znew + beta*p;
+    
+    zold = znew;
+    rold = rnew;
+end
+
+r2u = r2utemp;
+
+
 end
 
