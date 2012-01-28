@@ -7,7 +7,7 @@ function [ ] = p14test( )
 % 
 % Matlab
 
-n = 2^6;
+n = 2^5;
 v= [0,1,5,10,25,50,100];
 x0 = zeros(n^2,1);
 maxit = 300;
