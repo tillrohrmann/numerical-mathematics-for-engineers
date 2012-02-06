@@ -47,9 +47,9 @@ for i=1:size(tolerances,2)
     
     semilogy(1:size(r2u1,1),r2u1,1:size(r2u2,1),r2u2,1:size(r2u3,1),r2u3,...
         1:size(r2u4,1),r2u4,1:size(r2u5,1),r2u5,1:size(r2u6,1),r2u6);
-    title(strcat('Relative updated residual w.r.t the tolerance and preconditioner. Tol:',num2str(tolerances(i))));
+    title(strcat('Relative updated residual error w.r.t the tolerance and preconditioner. Tol:',num2str(tolerances(i))));
     xlabel('Steps');
-    ylabel('Relative residual');
+    ylabel('Error');
     legend('L1','L2','L3','L4','L5','L6');
 
 end

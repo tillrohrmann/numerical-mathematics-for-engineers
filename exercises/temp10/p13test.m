@@ -31,9 +31,6 @@ L6 = cholinc(A,1e-4)';
 semilogy(1:size(r1,1),r1,1:size(r2,1),r2,1:size(r3,1),r3,...
     1:size(r4,1),r4,1:size(r5,1),r5,1:size(r6,1),r6);
 legend('L1','L2','L3','L4','L5','L6');
-title('Relative residuals of different preconditioner');
-xlabel('Steps');
-ylabel('Relative residual');
 
 
 end
